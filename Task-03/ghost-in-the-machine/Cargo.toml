@@ -1,0 +1,19 @@
+[package]
+name = "grand-line-restoration"
+version = "0.1.0"
+edition = "2021"
+authors = ["Grand Line Restoration Initiative <restoration@navnet.local>"]
+license = "MIT"
+description = "Root workspace for recovered Navigation Network archives."
+readme = "README.md"
+
+[workspace]
+members = [
+  "archives/east-blue",
+  "archives/reverse-mountain",
+  "archives/whiskey-peak",
+  "archives/alabasta",
+]
+
+[profile.release]
+opt-level = 3

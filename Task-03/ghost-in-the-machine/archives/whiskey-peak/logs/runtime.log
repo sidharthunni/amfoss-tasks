@@ -1,0 +1,8 @@
+2026-07-05T09:22:11Z DEBUG [runtime] resolved cache_dir=./cache
+2026-07-05T09:22:11Z DEBUG [runtime] resolved assets_dir=./config/assets
+2026-07-05T09:22:11Z WARN [runtime] asset path missing: ./config/assets
+2026-07-05T09:22:11Z WARN [runtime] cache directory missing; creating ./cache
+2026-07-05T09:22:11Z INFO [runtime] starting service on 0.0.0.0:9002
+2026-07-05T09:22:11Z INFO [runtime] max clients = 120
+2026-07-05T09:22:11Z INFO [runtime] legacy_mode enabled
+2026-07-05T09:22:11Z INFO [runtime] whiskey peak service booted

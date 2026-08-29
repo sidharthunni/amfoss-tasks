@@ -1,0 +1,6 @@
+2026-07-05T08:14:02Z INFO [restore-engine] starting restoration pipeline for Navigation Network legacy snapshot
+2026-07-05T08:14:02Z DEBUG [restore-engine] scanning recovered archive directories
+2026-07-05T08:14:02Z WARN [restore-engine] station registry snapshot missing deployment-zone label for station-12
+2026-07-05T08:14:02Z INFO [restore-engine] migration record loaded from legacy-stations.yml
+2026-07-05T08:14:02Z ERROR [restore-engine] compatibility enforcement deferred due to partial reconstruction
+2026-07-05T08:14:02Z INFO [restore-engine] archive state recorded; final review pending

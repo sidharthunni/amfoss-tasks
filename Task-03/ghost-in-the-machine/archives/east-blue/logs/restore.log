@@ -1,0 +1,4 @@
+2026-07-05T10:01:04Z INFO [east-blue] registry recovery step initialized
+2026-07-05T10:01:04Z INFO [east-blue] compatibility library loaded from navnet-core
+2026-07-05T10:01:04Z WARN [east-blue] legacy station snapshot contained mixed protocol versions
+2026-07-05T10:01:04Z INFO [east-blue] recovery bootstrap completed

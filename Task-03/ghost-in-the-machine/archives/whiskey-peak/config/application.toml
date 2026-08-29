@@ -1,0 +1,14 @@
+[service]
+host = "0.0.0.0"
+port = 9002
+max_clients = 120
+keep_alive = true
+
+[runtime]
+data_dir = "data"
+cache_dir = "cache"
+assets_dir = "assets"
+legacy_mode = true
+
+[logging]
+level = "debug"

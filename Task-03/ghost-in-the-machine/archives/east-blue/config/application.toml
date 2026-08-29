@@ -1,0 +1,9 @@
+[service]
+host = "127.0.0.1"
+port = 9001
+max_clients = 32
+keep_alive = true
+
+data_dir = "data"
+cache_dir = "cache"
+assets_dir = "assets"

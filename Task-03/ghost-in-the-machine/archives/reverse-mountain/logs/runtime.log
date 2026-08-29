@@ -1,0 +1,10 @@
+2026-07-05T10:12:09Z INFO [reverse-mountain] starting runtime boot
+2026-07-05T10:12:09Z DEBUG [reverse-mountain] loaded config from config/application.toml
+2026-07-05T10:12:09Z DEBUG [reverse-mountain] cache_dir resolved from working directory: /home/rufine/ghost-in-the-machine/archives/reverse-mountain/cache
+2026-07-05T10:12:09Z DEBUG [reverse-mountain] assets_dir resolved from config directory: /home/rufine/ghost-in-the-machine/archives/reverse-mountain/config/assets
+2026-07-05T10:12:09Z WARN [reverse-mountain] asset directory does not exist: /home/rufine/ghost-in-the-machine/archives/reverse-mountain/config/assets
+2026-07-05T10:12:09Z WARN [reverse-mountain] cache directory missing; creating fallback at /home/rufine/ghost-in-the-machine/archives/reverse-mountain/cache
+2026-07-05T10:12:09Z INFO [reverse-mountain] service starting on 0.0.0.0:8080
+2026-07-05T10:12:09Z INFO [reverse-mountain] effective max clients = 128
+2026-07-05T10:12:09Z INFO [reverse-mountain] data directory = data
+2026-07-05T10:12:09Z INFO [reverse-mountain] reverse mountain runtime boot completed

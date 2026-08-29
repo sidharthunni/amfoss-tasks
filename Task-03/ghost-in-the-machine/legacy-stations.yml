@@ -1,0 +1,11 @@
+- id: "station-alpha"
+  host: "alpha.navnet.local"
+  proto: "v1"
+  labels:
+    deployment-zone: "north"
+
+- id: "station-beta"
+  host: "beta.navnet.local"
+  proto: "v2"
+  labels:
+    deployment-zone: "south"

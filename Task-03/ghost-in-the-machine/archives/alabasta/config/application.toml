@@ -1,0 +1,18 @@
+[service]
+host = "0.0.0.0"
+port = 9010
+max_clients = 256
+keep_alive = true
+
+[runtime]
+data_dir = "data"
+cache_dir = "cache"
+assets_dir = "assets"
+legacy_compat = true
+
+[deployment]
+plan = "deployment/plan.yml"
+log_level = "info"
+
+[logging]
+level = "info"

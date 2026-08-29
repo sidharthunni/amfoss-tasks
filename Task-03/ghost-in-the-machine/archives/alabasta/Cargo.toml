@@ -1,0 +1,21 @@
+[package]
+name = "alabasta"
+version = "2.0.0"
+edition = "2021"
+authors = ["Alabasta Infrastructure Division <infra@navnet.local>"]
+description = "Final production snapshot of the Navigation Network integration service."
+license = "Apache-2.0"
+repository = "https://internal.navnet.local/repos/alabasta"
+readme = "README.md"
+
+[dependencies]
+anyhow = "1.0"
+env_logger = "0.10"
+log = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.7"
+thiserror = "1.0"
+
+[dev-dependencies]
+assert_fs = "1.0"

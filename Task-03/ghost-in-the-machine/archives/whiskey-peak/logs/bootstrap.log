@@ -1,0 +1,4 @@
+2026-07-05T09:22:11Z INFO [bootstrap] runtime bootstrap initialized
+2026-07-05T09:22:11Z INFO [bootstrap] configuration loaded from config/application.toml
+2026-07-05T09:22:11Z WARN [bootstrap] legacy_mode enabled; using compatibility path resolution
+2026-07-05T09:22:11Z INFO [bootstrap] bootstrap completed

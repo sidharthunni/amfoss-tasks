@@ -1,0 +1,7 @@
+# Historical runtime settings preserved for legacy deployments.
+# These values were migrated from the Reverse Mountain service.
+
+data_dir = "data"
+cache_dir = "cache"
+assets_dir = "assets"
+legacy_mode = false

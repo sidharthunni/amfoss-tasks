@@ -1,0 +1,10 @@
+rollout:
+  - phase: staging
+    nodes: 4
+    timeout_minutes: 20
+  - phase: canary
+    nodes: 2
+    timeout_minutes: 30
+  - phase: production
+    nodes: 12
+    timeout_minutes: 60

@@ -1,0 +1,6 @@
+# Preserved legacy values from earlier migration stages.
+# These settings are retained for archival purposes and are no longer authoritative.
+
+[legacy]
+old_asset_path = "./legacy-assets"
+old_cache_path = "./legacy-cache"

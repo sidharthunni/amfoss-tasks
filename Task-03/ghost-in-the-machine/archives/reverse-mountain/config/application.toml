@@ -1,0 +1,13 @@
+[service]
+host = "0.0.0.0"
+port = 8080
+max_clients = 128
+keep_alive = true
+
+[runtime]
+data_dir = "data"
+cache_dir = "cache"
+assets_dir = "assets"
+
+[logging]
+level = "debug"

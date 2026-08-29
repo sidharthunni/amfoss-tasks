@@ -1,0 +1,9 @@
+2026-07-05T11:03:22Z INFO [alabasta] configuration loaded from config/application.toml
+2026-07-05T11:03:22Z DEBUG [alabasta] resolved data_dir=./data
+2026-07-05T11:03:22Z DEBUG [alabasta] resolved cache_dir=./cache
+2026-07-05T11:03:22Z DEBUG [alabasta] resolved assets_dir=./assets
+2026-07-05T11:03:22Z INFO [alabasta] cache directory not found, creating ./cache
+2026-07-05T11:03:22Z INFO [alabasta] legacy compatibility enabled for runtime integration
+2026-07-05T11:03:22Z INFO [alabasta] coordinator initialization complete
+2026-07-05T11:03:22Z INFO [alabasta] service starting with host 0.0.0.0 and port 9010
+2026-07-05T11:03:22Z INFO [alabasta] alabasta service startup complete

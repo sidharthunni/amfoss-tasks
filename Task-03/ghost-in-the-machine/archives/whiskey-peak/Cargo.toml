@@ -1,0 +1,22 @@
+[package]
+name = "whiskey-peak"
+version = "1.2.0"
+edition = "2021"
+authors = ["Whiskey Peak Engineering Office <ops@navnet.local>"]
+description = "Runtime reconciliation service for Navigation Network state management."
+license = "Apache-2.0"
+repository = "https://internal.navnet.local/repos/whiskey-peak"
+readme = "README.md"
+
+[dependencies]
+anyhow = "1.0"
+log = "0.4"
+env_logger = "0.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+toml = "0.7"
+thiserror = "1.0"
+
+[dev-dependencies]
+assert_fs = "1.0"
