@@ -1,68 +1,67 @@
-Found the genuine Devil Fruit by checking file permissions with `ls -la` 
-across all 4 sectors. Only sector_C/devil_fruit_6.txt had execute 
-permission (-rwxrwxr-x) while all other 39 files were plain read/write 
-files (-rw-rw-r--). Ran ./eat.sh sector_C/devil_fruit_6.txt to get:
+## Level 1
+I started by checking file permissions in all 4 sectors using ls -la, 
+since the story hinted the real fruit could "awaken itself." Turned out 
+sector_C/devil_fruit_6.txt was the only file with execute permission 
+(-rwxrwxr-x), while the other 39 files were just normal read/write 
+files. Ran ./eat.sh sector_C/devil_fruit_6.txt and got:
 ONE_PIECE{GITO_GITO_NO_AWAKENING}
 
 ## Level 2
-The visible feast_manifest.txt had nothing hidden. Checked git branches 
-with `git branch -a` and found `whiskey_peak_investigation` - switching 
-to it revealed a hidden folder `.baroque_works_cache` containing 
-`unlock_vault.sh`. It required an environment variable AWAKENING_SIGNATURE 
-set to the Level 1 flag:
+The manifest file looked totally normal at first, nothing hidden in it. 
+I checked git branch -a and found a branch called 
+whiskey_peak_investigation. Switching to it showed a hidden folder 
+called .baroque_works_cache with a script called unlock_vault.sh inside. 
+It wouldn't run until I set an environment variable with my Level 1 flag:
 export AWAKENING_SIGNATURE="ONE_PIECE{GITO_GITO_NO_AWAKENING}"
-Running ./unlock_vault.sh then dropped two files, marine_intercept.log 
-and bounty_hunter_feed.log. Running diff between them revealed the 
-Executive Transmission Code:
+That unlocked two files, marine_intercept.log and bounty_hunter_feed.log. 
+Running diff between them showed the actual transmission code:
 BAROQUE_DIAL{SPLIT_TIMELINE_MISDIRECTION}
+
 ## Level 3
-Searched the whole Wax_Jungle tree with grep -rli "baroque" and found 
-GrandLine/Wax_Jungle/sector_beta/outpost/watchtower/storage/archive/agent_manifest.log 
-buried deep in nested folders. It contained a SECURITY_TAG matching the 
-base64 encoding of the Level 2 code, confirming this was the genuine 
-report among hundreds of decoys. It also contained a bonus find:
+This one had hundreds of decoy report files spread across deeply nested 
+folders. I used grep -rli "baroque" to search everything at once instead 
+of checking files one by one, and it pointed me to 
+GrandLine/Wax_Jungle/sector_beta/outpost/watchtower/storage/archive/agent_manifest.log. 
+It had a SECURITY_TAG that matched the base64 version of my Level 2 
+code, confirming it was the real one. It also had a bonus line I didn't 
+need yet:
 PONEGLYPH_FRAGMENT_I = "KjY2MjF4bW0lKzYqNyBsIS0vbTAtJTcnL"
-(saved for later - Level 5 needs two Poneglyph fragments combined)
+
 ## Level 4
-The blueprint file had no name/extension. Used `file puffing_tom_blueprints` 
-to identify its real nature - it was gzip data. Renamed it to add a 
-.tar.gz extension, gunzipped it into a .tar file, extracted that with tar, 
-which revealed a .zip file. Unzipping that gave two files: frame_specs.dat 
-(a decoy, just plain text) and secret_link.txt containing the real second 
-cipher fragment:
-PONEGLYPH_FRAGMENT_II="SwnbzptDiM3JSpvFiMuJ28PJzAlJ28VIzA="
-Now have both fragments needed for Level 5:
-FRAGMENT_I  = "KjY2MjF4bW0lKzYqNyBsIS0vbTAtJTcnL"
-FRAGMENT_II = "SwnbzptDiM3JSpvFiMuJ28PJzAlJ28VIzA="
+The blueprint file had no name or extension at all, so I used the file 
+command to figure out what it actually was - turned out to be gzip 
+data. I renamed it with a .tar.gz extension, unzipped it, which gave a 
+tar file, extracted that, and found a zip file inside. Unzipping that 
+one gave two files - one was just a decoy, and the other, 
+secret_link.txt, had the second fragment:
+PONEGLYPH_FRAGMENT_II = "SwnbzptDiM3JSpvFiMuJ28PJzAlJ28VIzA="
+Now I had both fragments needed for the next level.
+
 ## Level 5
-Checked git log --all --oneline and found commit d4e7bf5 "Level 5 : 
-Vault Sealed" - the last commit before evidence got erased in a later 
-commit. Used `git checkout d4e7bf5 -- GrandLine/Enies_Lobby` to recover 
-those files without switching branches. Found poneglyph.py which decodes 
-a base64 string then XORs each byte with 0x42. Combined the two Poneglyph 
-fragments found earlier (Level 3 + Level 4) into one string and ran it 
-through the script:
-KjY2MjF4bW0lKzYqNyBsIS0vbTAtJTcnLSwnbzptDiM3JSpvFiMuJ28PJzAlJ28VIzA=
-Output revealed a new repo link:
+This one was hidden in the git history instead of any folder. I ran 
+git log --all --oneline and found a commit called "Level 5 : Vault 
+Sealed" right before another commit that deleted everything. Used 
+git checkout <commit> -- <path> to pull those old files back without 
+switching my whole branch. Inside was a script called poneglyph.py that 
+takes a base64 code, decodes it, and XORs each byte with 0x42. I joined 
+both fragments together and ran them through the script, which gave me 
+a new repo link:
 https://github.com/rogueone-x/Laugh-Tale-Merge-War
 
 ## Level 6 - Laugh Tale
-The decoded Level 5 message revealed a new repo: 
-https://github.com/rogueone-x/Laugh-Tale-Merge-War
-Cloned it and found two branches, ancient_history and pirate_king_path, 
-both diverging from the same initial commit. Ran:
-git merge origin/pirate_king_path
-This conflicted in treasure/key_part_1.txt and key_part_2.txt. Each file 
-had half the password on each branch:
-key_part_1: "TheGrand" (pirate_king_path) + "Line" (ancient_history) = TheGrandLine
-key_part_2: "Remem" (pirate_king_path) + "bers" (ancient_history) = Remembers
-Combined password: TheGrandLineRemembers
-Verified with sha256sum against the hash in victory.sh before committing.
-Resolved both files, committed the merge, and ran ./victory.sh with the 
-password to get the final flag:
+Cloned the new repo and found two branches that had grown apart from 
+the same starting point. Running git merge caused a real conflict in 
+two files, and each file had half the password split across both 
+branches:
+key_part_1: "TheGrand" + "Line" = TheGrandLine
+key_part_2: "Remem" + "bers" = Remembers
+So the full password was TheGrandLineRemembers. I checked this against 
+the hash inside victory.sh using sha256sum before committing anything, 
+just to be sure. Fixed both files, committed the merge, and ran 
+./victory.sh with the password to get the final flag:
 FLAG{The_Grand_Line_Remembers_Your_Commit}
 
-## Summary of all flags/codes found
+## All the codes I found along the way
 - Level 1: ONE_PIECE{GITO_GITO_NO_AWAKENING}
 - Level 2: BAROQUE_DIAL{SPLIT_TIMELINE_MISDIRECTION}
 - Level 3: PONEGLYPH_FRAGMENT_I = KjY2MjF4bW0lKzYqNyBsIS0vbTAtJTcnL
