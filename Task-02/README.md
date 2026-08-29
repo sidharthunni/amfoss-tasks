@@ -28,4 +28,11 @@ Quick summary:
 - Resolving real merge conflicts by combining content from both sides
 
 ## Review
-[your honest thoughts]
+Levels 5 and 6 were the most satisfying to crack, especially finally
+getting the merge conflict resolved at the end. Honestly, most of the
+other levels confused me too, but I kept at it and worked through them
+one step at a time. There were moments it got frustrating, but it felt
+really good once everything came together. What stood out to me the
+most were the commands themselves — recovering old files from git
+history and actually resolving a real merge conflict felt like proper
+git skills, not just theory.
