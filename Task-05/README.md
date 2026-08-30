@@ -54,3 +54,20 @@ the Linux kernel interface.
 - Python curses official docs
 - Python os module docs (os.sysconf)
 - htop behavior as a UX reference
+
+## Screenshots
+
+### Live monitor running
+![Monitor running](screenshots/monitor_running.png)
+
+### Navigating with arrow keys
+![Navigation](screenshots/navigation.png)
+
+### Before terminating a test process
+![Before kill](screenshots/before_kill.png)
+
+### After terminating the process
+![After kill](screenshots/after_kill.png)
+
+### Clean compile check
+![Compile OK](screenshots/compile_ok.png)
