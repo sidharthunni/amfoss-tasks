@@ -1,0 +1,3 @@
+# No external dependencies required.
+# This implementation reads directly from /proc using only the Python
+# standard library (os, curses, signal, time).
